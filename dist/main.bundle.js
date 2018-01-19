@@ -73,7 +73,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "#header {\n    background: #fff;\n    color: #A0B6C2 !important;\n    color: hsla(0, 0%, 100%, .87);\n    top: 0;\n    left: 0;\n    right: 0;\n    z-index: 2;\n    padding: 0px;\n    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);\n}", ""]);
+exports.push([module.i, "#header {\n    background: #fff;\n    color: #A0B6C2 !important;\n    color: hsla(0, 0%, 100%, .87);\n    top: 0;\n    left: 0;\n    right: 0;\n    z-index: 2;\n    padding: 0px;\n    -webkit-box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);\n            box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);\n}", ""]);
 
 // exports
 
