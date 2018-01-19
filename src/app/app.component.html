@@ -1,0 +1,67 @@
+<!-- Top Navigation Toolbar Started -->
+<mat-toolbar id="header" color="primary">
+    <span>
+    <a mat-button routerLink=".">
+      <mat-icon>ac_unit</mat-icon> {{title}}
+    </a>
+  </span>
+</mat-toolbar>
+<!-- Top Navigation Toolbar Finish -->
+
+<div id="main-wrap">
+    <div id="sidebar">
+        <mat-card style="margin: 20px;">
+            <label> Questions: </label><br><br>
+            <button mat-mini-fab color="primary" *ngFor="let question of questions" [ngClass]="question.id === selectedQuestion.id ? 'active' : ''" (click)="selectQuestion(question)" type="button" name="button" class="btn btn-default">
+                {{question.id}}
+            </button>
+        </mat-card>
+    </div>
+    <div id="content-wrap">
+        <mat-card style="margin: 20px;">
+            <mat-card-header>
+                <mat-card-title>
+                    <div *ngIf="selectedQuestion?.statment">
+                        {{ selectedQuestion.statment }}
+                    </div>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div *ngIf="selectedQuestion?.options?.length > 0">
+                    <mat-radio-group class="radio-group">
+                        <mat-radio-button class="radio-button" value="A" (click)="selectedOptions = 'A'" [checked]="'A' === selectedOptions">{{selectedQuestion?.options[0].A}}</mat-radio-button>
+                        <mat-radio-button class="radio-button" value="B" (click)="selectedOptions = 'B'" [checked]="'B' === selectedOptions">{{selectedQuestion?.options[1].B}}</mat-radio-button>
+                        <mat-radio-button class="radio-button" value="C" (click)="selectedOptions = 'C'" [checked]="'C' === selectedOptions">{{selectedQuestion?.options[2].C}}</mat-radio-button>
+                        <mat-radio-button class="radio-button" value="D" (click)="selectedOptions = 'D'" [checked]="'D' === selectedOptions">{{selectedQuestion?.options[3].D}}</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <div>
+                    <button mat-raised-button color="primary" (click)="preQuestion()" type="button" name="button" class="btn btn-default" [disabled]="preQDisabled">
+                        Previous
+                    </button>
+                    <button mat-raised-button color="primary" (click)="nxtQuestion()" type="button" name="button" class="btn btn-default" [disabled]="nxtQDisabled">
+                        Next
+                    </button>
+                    <button mat-raised-button color="primary" (click)="submit()" type="button" name="button" class="btn btn-default" style="float: right;">
+                        Submit
+                    </button>
+                </div>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <div id="answer-wrap">
+        <div style="margin: 20px;">
+            <div id="_area">
+                <label> Answers: </label><br>
+            </div>
+            <div *ngFor="let submission of submissions">
+                <mat-card style="margin-top: 1px;">
+                    ID: {{submission.id}} <br> Time Taken: {{submission.timeTaken}} <br> Option: {{submission.option}}
+                </mat-card>
+            </div>
+        </div>
+
+    </div>
+</div>

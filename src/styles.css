@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* Gloabl Style */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: Roboto, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+    background: #263C51;
+}
+
+
+/* layout */
+
+#main-wrap {
+    /* overflow to handle inner floating block */
+    overflow: hidden;
+}
+
+#sidebar {
+    float: left;
+    width: 20%;
+}
+
+#content-wrap {
+    float: left;
+    width: 60%;
+}
+
+#answer-wrap {
+    float: left;
+    width: 20%;
+}
+
+.active {
+    background: green !important
+}
+
+.radio-group {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.radio-button {
+    margin: 5px;
+}
+
+#_area {
+    margin: 10px auto;
+    background: #fff;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#_area label {
+    font-weight: bold;
+}
