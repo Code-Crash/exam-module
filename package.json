@@ -4,11 +4,14 @@
     "license": "MIT",
     "scripts": {
         "ng": "ng",
-        "start": "ng serve",
+        "start": "npm run start-http",
+        "start-http": "http-server ./dist",
+        "start-ng": "ng serve",
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint",
-        "e2e": "ng e2e"
+        "e2e": "ng e2e",
+        "preinstall": "npm install -g http-server"
     },
     "private": true,
     "dependencies": {
